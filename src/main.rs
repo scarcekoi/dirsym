@@ -1,10 +1,14 @@
+use std::path::PathBuf;
+
 use clap::Parser;
 
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
 struct Args {
-    source: std::path::PathBuf,
-    destination: std::path::PathBuf,
+    /// The source directory that contains the file(s) to link to
+    source: PathBuf,
+    /// The destination directory where the symlink(s) are created
+    destination: PathBuf,
 }
 
 fn main() {
