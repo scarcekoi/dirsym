@@ -14,6 +14,8 @@ struct Args {
 
 fn main() {
     let args = Args::parse();
+
+    create_symlinks(find_files(args.source), args.destination);
 }
 
 fn find_files(path: PathBuf) -> Vec<PathBuf> {
